@@ -5,7 +5,10 @@ specifiers:
   '@babel/core': ^7.17.8
   '@babel/preset-env': ^7.16.11
   '@babel/preset-react': ^7.16.7
+  '@babel/preset-typescript': ^7.16.7
   '@pmmmwh/react-refresh-webpack-plugin': ^0.5.5
+  '@types/react': ^17.0.43
+  '@types/react-dom': ^17.0.14
   babel-loader: ^8.2.4
   cross-env: ^7.0.3
   css-loader: ^6.7.1
@@ -16,6 +19,7 @@ specifiers:
   react-refresh: ^0.12.0
   sass-loader: ^12.6.0
   style-loader: ^3.3.1
+  typescript: ^4.6.3
   webpack: ^5.71.0
   webpack-cli: ^4.9.2
   webpack-dev-server: ^4.7.4
@@ -29,7 +33,10 @@ devDependencies:
   '@babel/core': 7.17.8
   '@babel/preset-env': 7.16.11_@babel+core@7.17.8
   '@babel/preset-react': 7.16.7_@babel+core@7.17.8
+  '@babel/preset-typescript': 7.16.7_@babel+core@7.17.8
   '@pmmmwh/react-refresh-webpack-plugin': 0.5.5_6f86a3ac56ba047d95acb197aebdbb78
+  '@types/react': 17.0.43
+  '@types/react-dom': 17.0.14
   babel-loader: 8.2.4_bb1d6ba6264b4355cd74ff79826974dc
   cross-env: 7.0.3
   css-loader: 6.7.1_webpack@5.71.0
@@ -38,6 +45,7 @@ devDependencies:
   react-refresh: 0.12.0
   sass-loader: 12.6.0_node-sass@7.0.1+webpack@5.71.0
   style-loader: 3.3.1_webpack@5.71.0
+  typescript: 4.6.3
   webpack: 5.71.0_webpack-cli@4.9.2
   webpack-cli: 4.9.2_465d31b295b7b075c501d3ecf7e1bfab
   webpack-dev-server: 4.7.4_webpack-cli@4.9.2+webpack@5.71.0
@@ -707,6 +715,16 @@ packages:
       '@babel/helper-plugin-utils': 7.16.7
     dev: true
 
+  /@babel/plugin-syntax-typescript/7.16.7_@babel+core@7.17.8:
+    resolution: {integrity: sha512-YhUIJHHGkqPgEcMYkPCKTyGUdoGKWtopIycQyjJH8OjvRgOYsXsaKehLVPScKJWAULPxMa4N1vCe6szREFlZ7A==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.17.8
+      '@babel/helper-plugin-utils': 7.16.7
+    dev: true
+
   /@babel/plugin-transform-arrow-functions/7.16.7_@babel+core@7.17.8:
     resolution: {integrity: sha512-9ffkFFMbvzTvv+7dTp/66xvZAWASuPD5Tl9LK3Z9vhOmANo6j94rik+5YMBt4CwHVMWLWpMsriIc2zsa3WW3xQ==}
     engines: {node: '>=6.9.0'}
@@ -1091,6 +1109,20 @@ packages:
       '@babel/helper-plugin-utils': 7.16.7
     dev: true
 
+  /@babel/plugin-transform-typescript/7.16.8_@babel+core@7.17.8:
+    resolution: {integrity: sha512-bHdQ9k7YpBDO2d0NVfkj51DpQcvwIzIusJ7mEUaMlbZq3Kt/U47j24inXZHQ5MDiYpCs+oZiwnXyKedE8+q7AQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.17.8
+      '@babel/helper-create-class-features-plugin': 7.17.6_@babel+core@7.17.8
+      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/plugin-syntax-typescript': 7.16.7_@babel+core@7.17.8
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/plugin-transform-unicode-escapes/7.16.7_@babel+core@7.17.8:
     resolution: {integrity: sha512-TAV5IGahIz3yZ9/Hfv35TV2xEm+kaBDaZQCn2S/hG9/CZ0DktxJv9eKfPc7yYCvOYR4JGx1h8C+jcSOvgaaI/Q==}
     engines: {node: '>=6.9.0'}
@@ -1223,6 +1255,20 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.17.3_@babel+core@7.17.8
       '@babel/plugin-transform-react-jsx-development': 7.16.7_@babel+core@7.17.8
       '@babel/plugin-transform-react-pure-annotations': 7.16.7_@babel+core@7.17.8
+    dev: true
+
+  /@babel/preset-typescript/7.16.7_@babel+core@7.17.8:
+    resolution: {integrity: sha512-WbVEmgXdIyvzB77AQjGBEyYPZx+8tTsO50XtfozQrkW8QB2rLJpH2lgx0TRw5EJrBxOZQ+wCcyPVQvS8tjEHpQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.17.8
+      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-validator-option': 7.16.7
+      '@babel/plugin-transform-typescript': 7.16.8_@babel+core@7.17.8
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/runtime/7.17.8:
@@ -1470,6 +1516,10 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
+  /@types/prop-types/15.7.4:
+    resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
+    dev: true
+
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
     dev: true
@@ -1478,8 +1528,26 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: true
 
+  /@types/react-dom/17.0.14:
+    resolution: {integrity: sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ==}
+    dependencies:
+      '@types/react': 17.0.43
+    dev: true
+
+  /@types/react/17.0.43:
+    resolution: {integrity: sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==}
+    dependencies:
+      '@types/prop-types': 15.7.4
+      '@types/scheduler': 0.16.2
+      csstype: 3.0.11
+    dev: true
+
   /@types/retry/0.12.1:
     resolution: {integrity: sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==}
+    dev: true
+
+  /@types/scheduler/0.16.2:
+    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
 
   /@types/serve-index/1.9.1:
@@ -2344,6 +2412,10 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
+
+  /csstype/3.0.11:
+    resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
     dev: true
 
   /dashdash/1.14.1:
@@ -5139,6 +5211,12 @@ packages:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.35
+    dev: true
+
+  /typescript/4.6.3:
+    resolution: {integrity: sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /unicode-canonical-property-names-ecmascript/2.0.0:
